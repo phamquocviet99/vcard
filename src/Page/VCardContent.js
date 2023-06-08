@@ -29,12 +29,12 @@ export function SaveCard() {
   // Tạo một thẻ <a> ẩn để thực hiện tải xuống
   const downloadLink = document.createElement("a");
 
-  downloadLink.setAttribute("target", "_blank");
   downloadLink.href = url;
   downloadLink.download = "contact.vcf";
-
+  downloadLink.rel = "nofollow";
   // Thêm thẻ <a> vào DOM và tự động kích hoạt sự kiện click để tải xuống
   document.body.appendChild(downloadLink);
+
   downloadLink.click();
 
   // Xóa thẻ <a> sau khi tải xuống hoàn tất
