@@ -40,7 +40,7 @@ export default function Vcard() {
                 <p className="text-base">Email</p>
               </a>
               <a
-                href="https://www.google.com/maps/place/1196+%C4%90.+3+Th%C3%A1ng+2,+Ph%C6%B0%E1%BB%9Dng+8,+Qu%E1%BA%ADn+11,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh+72614,+Vi%E1%BB%87t+Nam/@10.7609986,106.6395837,15.61z/data=!4m23!1m16!4m15!1m6!1m2!1s0x31752e8d64ba46d9:0x5ee4c9cbff93b10d!2zMTE5NiDEkMaw4budbmcgMyBUaMOhbmcgMiwgcGjGsOG7nW5nIDgsIFF14bqtbiAxMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!2m2!1d106.6502521!2d10.758934!1m6!1m2!1s0x31752959acf41157:0xd5e56d11828ec468!2zNDIgSOG7kyDEkOG6r2MgRGksIFTDonkgVGjhuqFuaCwgVMOibiBQaMO6LCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmggNzIwMTAsIFZp4buHdCBOYW0!2m2!1d106.632115!2d10.8061264!3e0!3m5!1s0x31752e8d64ba46d9:0x5ee4c9cbff93b10d!8m2!3d10.758934!4d106.6502521!16s%2Fg%2F11mk6_6fxq?entry=ttu"
+                href="https://www.google.com/maps/place/1196+đường+3+tháng+2,+phường+8,+Quận+11,+TP.+Hồ+Chí+Minh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
@@ -90,7 +90,7 @@ export default function Vcard() {
                   1196 đường 3/2, phường 8, Quận 11, TP.HCM
                 </p>
                 <a
-                  href="https://www.google.com/maps/place/1196+%C4%90.+3+Th%C3%A1ng+2,+Ph%C6%B0%E1%BB%9Dng+8,+Qu%E1%BA%ADn+11,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh+72614,+Vi%E1%BB%87t+Nam/@10.7609986,106.6395837,15.61z/data=!4m23!1m16!4m15!1m6!1m2!1s0x31752e8d64ba46d9:0x5ee4c9cbff93b10d!2zMTE5NiDEkMaw4budbmcgMyBUaMOhbmcgMiwgcGjGsOG7nW5nIDgsIFF14bqtbiAxMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!2m2!1d106.6502521!2d10.758934!1m6!1m2!1s0x31752959acf41157:0xd5e56d11828ec468!2zNDIgSOG7kyDEkOG6r2MgRGksIFTDonkgVGjhuqFuaCwgVMOibiBQaMO6LCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmggNzIwMTAsIFZp4buHdCBOYW0!2m2!1d106.632115!2d10.8061264!3e0!3m5!1s0x31752e8d64ba46d9:0x5ee4c9cbff93b10d!8m2!3d10.758934!4d106.6502521!16s%2Fg%2F11mk6_6fxq?entry=ttu"
+                  href="https://www.google.com/maps/place/1196+đường+3+tháng+2,+phường+8,+Quận+11,+TP.+Hồ+Chí+Minh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-blue-400 cursor-pointer w-fit hover:underline mt-2"
@@ -120,11 +120,11 @@ export default function Vcard() {
             />
             <div className="flex justify-center my-5">
               <button
-                onClick={()=> SaveCard()}
+                onClick={() => SaveCard()}
                 className="py-3 px-4 flex items-center justify-center gap-2 rounded-lg text-white bg-[#f25b18] hover:bg-orange-700 font-medium"
               >
                 {" "}
-                <AiOutlineUserAdd className="text-xl"/> Thêm liên hệ
+                <AiOutlineUserAdd className="text-xl" /> Thêm liên hệ
               </button>
             </div>
           </div>
