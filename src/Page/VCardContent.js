@@ -25,7 +25,6 @@ export function SaveCard() {
 
   // Tạo URL để tải xuống tệp tin vCard
   const url = window.URL.createObjectURL(blob);
-  window.alert(url);
 
   // Tạo một thẻ <a> ẩn để thực hiện tải xuống
   const downloadLink = document.createElement("a");
