@@ -8,7 +8,7 @@ import { SaveCard } from "./VCardContent";
 export default function Vcard() {
   return (
     <div className="w-screen h-screen overflow-y-auto">
-      <div className="relative 2xl:flex justify-center h-fit pb-10">
+      <div className="relative 2xl:flex justify-center pb-10">
         <div className="w-full">
           <div className="w-full bg-[#122C6C]  flex justify-center">
             <div className="max-w-md">
