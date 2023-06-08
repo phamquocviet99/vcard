@@ -113,7 +113,7 @@ export default function Vcard() {
           </div>
         </div>
       </div>
-      <div className="absolute lg:flex lg:relative bottom-3 right-4 lg:justify-center my-5">
+      <div className="absolute lg:flex lg:relative bottom-1 right-4 lg:justify-center my-5">
         <button
           onClick={() => SaveCard()}
           className="py-3 px-4 flex items-center justify-center gap-2 rounded-lg text-white bg-[#f25b18] hover:bg-orange-700 font-medium"
