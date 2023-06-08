@@ -24,6 +24,9 @@ export default function Vcard() {
             <p className="text-white font-medium text-center text-xl mt-5">
               Giám đốc
             </p>
+            <p className="text-sm font-medium text-gray-white text-white text-center mt-2">
+              Công ty Cổ Phần Flower Marketplace - FMP
+            </p>
             <div className="flex justify-center flex-wrap items-center text-white w-fit mt-14 mx-5 mb-10">
               <a
                 href="tel:0983277941"
@@ -52,7 +55,7 @@ export default function Vcard() {
           </div>
         </div>
         <div className="w-full flex justify-center ">
-          <div className="max-w-md mx-5 w-full">
+          <div className="max-w-md mx-5 w-full relative">
             <div className="flex items-center w-full mt-7 gap-x-2">
               <div className="w-24 flex justify-start pl-6">
                 <AiFillPhone className="text-3xl text-gray-500" />
@@ -103,22 +106,8 @@ export default function Vcard() {
               style={{ height: "1px" }}
               className="bg-gray-300 w-full mt-3"
             />
-            <div className="flex items-center w-full mt-7 gap-x-2">
-              <div className="w-24 flex justify-start pl-6">
-                <BsPersonWorkspace className="text-3xl text-gray-500" />
-              </div>
-              <div className="flex flex-col justify-start w-full">
-                <p className="text-sm font-medium text-gray-800">
-                  Công ty Cổ Phần Flower Marketplace - FMP
-                </p>
-                <p className="text-sm text-gray-400 mt-2">Giám đốc</p>
-              </div>
-            </div>
-            <div
-              style={{ height: "1px" }}
-              className="bg-gray-300 w-full mt-3"
-            />
-            <div className="flex justify-center my-5">
+
+            <div className="absolute lg:flex bottom-10 right-10 justify-center my-5">
               <button
                 onClick={() => SaveCard()}
                 className="py-3 px-4 flex items-center justify-center gap-2 rounded-lg text-white bg-[#f25b18] hover:bg-orange-700 font-medium"
