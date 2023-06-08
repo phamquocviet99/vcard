@@ -36,5 +36,5 @@ export function SaveCard() {
   downloadLink.click();
 
   // Xóa thẻ <a> sau khi tải xuống hoàn tất
-  document.body.removeChild(downloadLink);
+  //document.body.removeChild(downloadLink);
 }
