@@ -3,8 +3,8 @@ import { BsFillTelephoneFill, BsPersonWorkspace } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { TbWorld } from "react-icons/tb";
 import { AiFillPhone } from "react-icons/ai";
-import { HiOutlineMail } from "react-icons/hi";
-import { ImLocation2 } from "react-icons/im";
+import { HiOutlineMail, HiLocationMarker } from "react-icons/hi";
+
 import { BiSolidShoppingBag } from "react-icons/bi";
 export default function Vcard() {
   return (
@@ -41,19 +41,19 @@ export default function Vcard() {
                 <p className="text-base">EMAIL</p>
               </a>
               <button className="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                <TbWorld className="text-xl" />
-                <p className="text-base">WEBSITE</p>
+                <HiLocationMarker className="text-xl" />
+                <p className="text-base">LOCATION</p>
               </button>
             </div>
           </div>
         </div>
         <div className="w-full flex justify-center ">
-          <div className="max-w-md w-full">
-            <div className="flex items-center w-full mt-7  gap-x-2">
-              <div className="w-24 flex justify-center">
+          <div className="max-w-md mx-5 w-full">
+            <div className="flex items-center w-full mt-7 gap-x-2">
+              <div className="w-24 flex justify-start pl-6">
                 <AiFillPhone className="text-3xl text-gray-500" />
               </div>
-              <div className="">
+              <div className="flex flex-col justify-start w-full">
                 <p className="text-sm font-medium text-gray-800">0983277941</p>
                 <p className="text-sm text-gray-400 mt-2">Điện thoại</p>
               </div>
@@ -62,11 +62,11 @@ export default function Vcard() {
               style={{ height: "1px" }}
               className="bg-gray-300 w-full mt-3"
             />
-            <div className="flex items-center w-full mt-7  gap-x-2">
-              <div className="w-24 flex justify-center">
+            <div className="flex items-center w-full mt-7 gap-x-2">
+              <div className="w-24 flex justify-start pl-6">
                 <HiOutlineMail className="text-3xl text-gray-500" />
               </div>
-              <div className="">
+              <div className="flex flex-col justify-start w-full">
                 <p className="text-sm font-medium text-gray-800">
                   ctyfmp@gmail.com
                 </p>
@@ -77,11 +77,11 @@ export default function Vcard() {
               style={{ height: "1px" }}
               className="bg-gray-300 w-full mt-3"
             />
-            <div className="flex items-center w-full mt-7  gap-x-2">
-              <div className="w-24 flex justify-center">
-                <ImLocation2 className="text-3xl text-gray-500" />
+            <div className="flex items-center w-full mt-7 gap-x-2">
+              <div className="w-24 flex justify-start pl-6">
+                <HiLocationMarker className="text-3xl text-gray-500" />
               </div>
-              <div className="">
+              <div className="flex flex-col justify-start w-full">
                 <p className="text-sm font-medium text-gray-800">
                   1196 đường 3/2, phường 8, Quận 11, TP.HCM
                 </p>
@@ -99,11 +99,11 @@ export default function Vcard() {
               style={{ height: "1px" }}
               className="bg-gray-300 w-full mt-3"
             />
-            <div className="flex items-center w-full mt-7  gap-x-2">
-              <div className="w-24 flex justify-center">
+            <div className="flex items-center w-full mt-7 gap-x-2">
+              <div className="w-24 flex justify-start pl-6">
                 <BsPersonWorkspace className="text-3xl text-gray-500" />
               </div>
-              <div className="">
+              <div className="flex flex-col justify-start w-full">
                 <p className="text-sm font-medium text-gray-800">
                   Công ty Cổ Phần Flower Marketplace - FMP
                 </p>
