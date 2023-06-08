@@ -55,7 +55,7 @@ export default function Vcard() {
           </div>
         </div>
         <div className="w-full flex justify-center ">
-          <div className="max-w-md mx-5 w-full relative py-10">
+          <div className="max-w-md mx-5 w-full relative pb-10">
             <div className="flex items-center w-full mt-7 gap-x-2">
               <div className="w-24 flex justify-start pl-6">
                 <AiFillPhone className="text-3xl text-gray-500" />
@@ -106,18 +106,18 @@ export default function Vcard() {
               style={{ height: "1px" }}
               className="bg-gray-300 w-full mt-3"
             />
-
-            <div className="absolute lg:flex bottom-3 right-0 justify-center my-5">
-              <button
-                onClick={() => SaveCard()}
-                className="py-3 px-4 flex items-center justify-center gap-2 rounded-lg text-white bg-[#f25b18] hover:bg-orange-700 font-medium"
-              >
-                {" "}
-                <AiOutlineUserAdd className="text-xl" /> Thêm liên hệ
-              </button>
-            </div>
           </div>
         </div>
+      </div>
+
+      <div className="absolute lg:flex bottom-3 right-3 justify-center my-5">
+        <button
+          onClick={() => SaveCard()}
+          className="py-3 px-4 flex items-center justify-center gap-2 rounded-lg text-white bg-[#f25b18] hover:bg-orange-700 font-medium"
+        >
+          {" "}
+          <AiOutlineUserAdd className="text-xl" /> Thêm liên hệ
+        </button>
       </div>
     </div>
   );
