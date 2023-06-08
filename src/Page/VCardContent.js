@@ -25,9 +25,12 @@ export function SaveCard() {
 
   // Tạo URL để tải xuống tệp tin vCard
   const url = window.URL.createObjectURL(blob);
+  window.alert("hi");
 
   // Tạo một thẻ <a> ẩn để thực hiện tải xuống
   const downloadLink = document.createElement("a");
+
+  downloadLink.setAttribute("target", "_blank");
   downloadLink.href = url;
   downloadLink.download = "contact.vcf";
 
