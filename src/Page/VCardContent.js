@@ -31,11 +31,11 @@ export function SaveCard() {
 
   downloadLink.href = url;
   downloadLink.download = "contact.vcf";
-
+  downloadLink.rel = "noopener noreferrer";
   // Thêm thẻ <a> vào DOM và tự động kích hoạt sự kiện click để tải xuống
   document.body.appendChild(downloadLink);
-  window.open(url);
-  //downloadLink.click();
+
+  downloadLink.click();
 
   // Xóa thẻ <a> sau khi tải xuống hoàn tất
   //document.body.removeChild(downloadLink);
