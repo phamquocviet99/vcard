@@ -39,37 +39,12 @@ export default function Vcard() {
                   onClick={() => {
                     SaveCard();
                   }}
-                  className="py-3 px-4 flex items-center justify-center gap-2 rounded-lg text-white bg-[#f25b18] hover:bg-orange-700 font-medium"
+                  className="py-3 px-20 flex items-center justify-center gap-2 rounded-lg text-white bg-[#f25b18] hover:bg-orange-700 font-medium"
                 >
                   {" "}
                   <AiOutlineUserAdd className="text-xl" /> Thêm liên hệ
                 </button>
               </div>
-              {/* <div className="flex justify-center flex-wrap items-center text-white w-fit mt-14 mx-5 mb-10">
-                <a
-                  href="tel:0983277941"
-                  className="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  <BsFillTelephoneFill className="text-base" />
-                  <p className="text-base">Call</p>
-                </a>
-                <a
-                  href="mailto: ctyfmp@gmail.com"
-                  className="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  <MdEmail className="text-xl" />
-                  <p className="text-base">Email</p>
-                </a>
-                <a
-                  href="https://www.google.com/maps/place/1196+đường+3+tháng+2,+phường+8,+Quận+11,+TP.+Hồ+Chí+Minh"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                >
-                  <HiLocationMarker className="text-xl" />
-                  <p className="text-base">Location</p>
-                </a>
-              </div> */}
             </div>
           </div>
           <div className="w-full flex justify-center ">
