@@ -1,11 +1,11 @@
 import VCard from "vcard-creator";
 
-export function SaveCard() {
+export function SaveCard(name, company, position, email, phone, address) {
   const myVCard = new VCard();
 
   // Some variables
   const lastname = "";
-  const firstname = "Trần Thị Hữu Ái";
+  const firstname = name;
   const additional = "";
   const prefix = "";
   const suffix = "";
@@ -14,11 +14,11 @@ export function SaveCard() {
     // Add personal data
     .addName(firstname, lastname, additional, prefix, suffix)
     // Add work data
-    .addCompany("Công ty Cổ Phần Flower Marketplace - FMP")
-    .addJobtitle("Giám đốc")
-    .addEmail("ctyfmp@gmail.com")
-    .addPhoneNumber(84983277941, "PREF;WORK")
-    .addAddress("1196 đường 3/2, phường 8, Quận 11, TP.HCM");
+    .addCompany(company)
+    .addJobtitle(position)
+    .addEmail(email)
+    .addPhoneNumber(phone, "PREF;WORK")
+    .addAddress(address);
 
   // Tạo Blob từ nội dung vCard
   const blob = new Blob([myVCard], { type: "text/vcard" });

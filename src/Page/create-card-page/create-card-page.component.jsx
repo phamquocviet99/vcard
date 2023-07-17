@@ -217,6 +217,7 @@ export const CreateCardPage = () => {
   };
 
   const createCard = async () => {
+    setLoading(true);
     await UploadFile.uploadSingleFile(previewAvatar, "VCard/images").then(
       (res) => {
         if (res?.url) {
@@ -224,6 +225,7 @@ export const CreateCardPage = () => {
         }
       }
     );
+    setLoading(false);
   };
 
   return (

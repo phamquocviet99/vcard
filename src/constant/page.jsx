@@ -1,7 +1,7 @@
 export const PagePath = {
   Login: "/login",
-  Dashboard: "/dashboard",
+  Dashboard: "/",
   CreateCard: "/create-card",
-  CardInfo: "/card-info",
+  CardInfo: "/v-card",
   EditCard: "/edit-card",
 };

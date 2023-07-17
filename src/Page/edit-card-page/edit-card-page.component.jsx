@@ -190,7 +190,29 @@ export const EditCardPage = () => {
     try {
       await axiosPrivate.put("v-card/" + id, data).then((res) => {
         if (res?.data?.success) {
-          setSuccessDialog(true);
+          axiosPrivate
+            .put("v-card/" + res?.data?.data?.id, {
+              ...res?.data?.data,
+              QRcode: {
+                url: window?.location?.href?.replace(
+                  "create-card",
+                  "v-card/" + res?.data?.data?.id
+                ),
+              },
+            })
+            .then((updateRes) => {
+              if (updateRes?.data?.success) {
+                setQRValue(
+                  window?.location?.href?.replace(
+                    "create-card",
+                    "v-card/" + res?.data?.data?.id
+                  )
+                );
+                setSuccessDialog(true);
+              } else {
+                ErrorPopUp(updateRes?.data?.message);
+              }
+            });
         } else {
           ErrorPopUp(res?.data?.message);
         }

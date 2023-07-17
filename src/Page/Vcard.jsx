@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BsFacebook,
   BsFillTelephoneFill,
@@ -9,8 +9,37 @@ import { MdEmail } from "react-icons/md";
 import { HiOutlineMail, HiLocationMarker } from "react-icons/hi";
 import { SiZalo } from "react-icons/si";
 import { SaveCard } from "./VCardContent";
+import { useState } from "react";
+import { axiosClient, usePrivate } from "../service/service";
+import { useParams } from "react-router-dom";
+import { ErrorPopUp } from "../functions/notification-fuction";
 
 export default function Vcard() {
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
+  const { id } = useParams();
+
+  const getData = async () => {
+    setLoading(true);
+    try {
+      await axiosClient.get("/v-card/" + id).then((res) => {
+        if (res?.data?.success) {
+          setData(res?.data?.data);
+        } else {
+          ErrorPopUp(res?.data?.message);
+        }
+        setLoading(false);
+      });
+    } catch (err) {
+      ErrorPopUp(err);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="w-screen h-screen overflow-y-auto">
       <div className="relative 2xl:flex justify-center pb-10">
@@ -25,19 +54,26 @@ export default function Vcard() {
                 />
               </div>
               <p className="text-white font-bold text-center text-3xl mt-5">
-                Trần Thị Hữu Ái
+                {data?.userName}
               </p>
               <p className="text-white font-medium text-center text-xl mt-5">
-                Giám đốc
+                {data?.position}
               </p>
               <p className="text-sm font-medium text-gray-white text-white text-center mt-2">
-                Công ty Cổ Phần Flower Marketplace - FMP
+                {data?.companyName}
               </p>
 
               <div className="flex py-3 justify-center my-5">
                 <button
                   onClick={() => {
-                    SaveCard();
+                    SaveCard(
+                      data?.userName,
+                      data?.companyName,
+                      data?.position,
+                      data?.email,
+                      data?.phone,
+                      data?.location
+                    );
                   }}
                   className="py-3 px-20 flex items-center justify-center gap-2 rounded-lg text-white bg-[#f25b18] hover:bg-orange-700 font-medium"
                 >
@@ -58,7 +94,7 @@ export default function Vcard() {
                     href="tel:0983277941"
                     className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
                   >
-                    0983277941
+                    {data?.phone}
                   </a>
                   <p className="text-sm text-gray-400 mt-2">Điện thoại</p>
                 </div>
@@ -68,47 +104,55 @@ export default function Vcard() {
                 className="bg-gray-300 w-full mt-3"
               />
 
-              <div className="flex items-center w-full mt-7 gap-x-2">
-                <div className="w-24 flex justify-start pl-6">
-                  <SiZalo className="text-3xl text-gray-500" />
-                </div>
-                <div className="flex flex-col justify-start w-full">
-                  <a
-                    href="https://zalo.me/huuaicn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
-                  >
-                    Ái Trần - Vide
-                  </a>
-                  <p className="text-sm text-gray-400 mt-2">Zalo</p>
-                </div>
-              </div>
-              <div
-                style={{ height: "1px" }}
-                className="bg-gray-300 w-full mt-3"
-              />
+              {data?.zalo?.url && (
+                <>
+                  <div className="flex items-center w-full mt-7 gap-x-2">
+                    <div className="w-24 flex justify-start pl-6">
+                      <SiZalo className="text-3xl text-gray-500" />
+                    </div>
+                    <div className="flex flex-col justify-start w-full">
+                      <a
+                        href={data?.zalo?.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
+                      >
+                        {data?.zalo?.name || data?.userName}
+                      </a>
+                      <p className="text-sm text-gray-400 mt-2">Zalo</p>
+                    </div>
+                  </div>
+                  <div
+                    style={{ height: "1px" }}
+                    className="bg-gray-300 w-full mt-3"
+                  />
+                </>
+              )}
 
-              <div className="flex items-center w-full mt-7 gap-x-2">
-                <div className="w-24 flex justify-start pl-6">
-                  <BsFacebook className="text-3xl text-gray-500" />
-                </div>
-                <div className="flex flex-col justify-start w-full">
-                  <a
-                    href="https://www.facebook.com/ai.tran.986"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
-                  >
-                    AI Tran
-                  </a>
-                  <p className="text-sm text-gray-400 mt-2">Facebook</p>
-                </div>
-              </div>
-              <div
-                style={{ height: "1px" }}
-                className="bg-gray-300 w-full mt-3"
-              />
+              {data?.facebook?.url && (
+                <>
+                  <div className="flex items-center w-full mt-7 gap-x-2">
+                    <div className="w-24 flex justify-start pl-6">
+                      <BsFacebook className="text-3xl text-gray-500" />
+                    </div>
+                    <div className="flex flex-col justify-start w-full">
+                      <a
+                        href={data?.facebook?.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
+                      >
+                        {data?.facebook?.name || data?.userName}
+                      </a>
+                      <p className="text-sm text-gray-400 mt-2">Facebook</p>
+                    </div>
+                  </div>
+                  <div
+                    style={{ height: "1px" }}
+                    className="bg-gray-300 w-full mt-3"
+                  />
+                </>
+              )}
 
               <div className="flex items-center w-full mt-7 gap-x-2">
                 <div className="w-24 flex justify-start pl-6">
@@ -116,10 +160,10 @@ export default function Vcard() {
                 </div>
                 <div className="flex flex-col justify-start w-full">
                   <a
-                    href="mailto: ctyfmp@gmail.com"
+                    href={"mailto: " + data?.email}
                     className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
                   >
-                    ctyfmp@gmail.com
+                    {data?.email}
                   </a>
                   <p className="text-sm text-gray-400 mt-2">Email</p>
                 </div>
@@ -135,12 +179,15 @@ export default function Vcard() {
                 </div>
                 <div className="flex flex-col justify-start w-full">
                   <a
-                    href="https://www.google.com/maps/place/1196+đường+3+tháng+2,+phường+8,+Quận+11,+TP.+Hồ+Chí+Minh"
+                    href={
+                      "https://www.google.com/maps/place/" +
+                      data?.location?.replace(" ", "+")
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
                   >
-                    1196 đường 3/2, phường 8, Quận 11, TP.HCM
+                    {data?.location}
                   </a>
                   <p className="text-sm text-gray-400 w-fit  mt-2">Vị trí</p>
                 </div>
