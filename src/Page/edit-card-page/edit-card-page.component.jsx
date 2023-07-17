@@ -194,10 +194,7 @@ export const EditCardPage = () => {
             .put("v-card/" + res?.data?.data?.id, {
               ...res?.data?.data,
               QRcode: {
-                url: window?.location?.href?.replace(
-                  "create-card",
-                  "v-card/" + res?.data?.data?.id
-                ),
+                url: window?.location?.href?.replace("edit-card", "v-card"),
               },
             })
             .then((updateRes) => {
