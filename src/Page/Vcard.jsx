@@ -181,7 +181,7 @@ export default function Vcard() {
                   <a
                     href={
                       "https://www.google.com/maps/place/" +
-                      data?.location?.replace(" ", "+")
+                      data?.location?.replaceAll(" ", "+")
                     }
                     target="_blank"
                     rel="noopener noreferrer"
