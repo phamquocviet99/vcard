@@ -200,10 +200,7 @@ export const EditCardPage = () => {
             .then((updateRes) => {
               if (updateRes?.data?.success) {
                 setQRValue(
-                  window?.location?.href?.replace(
-                    "edit-card",
-                    "v-card" + res?.data?.data?.id
-                  )
+                  window?.location?.href?.replace("edit-card", "v-card")
                 );
                 setSuccessDialog(true);
               } else {
