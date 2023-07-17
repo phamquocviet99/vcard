@@ -202,7 +202,7 @@ export const EditCardPage = () => {
                 setQRValue(
                   window?.location?.href?.replace(
                     "edit-card",
-                    "v-card/" + res?.data?.data?.id
+                    "v-card" + res?.data?.data?.id
                   )
                 );
                 setSuccessDialog(true);
