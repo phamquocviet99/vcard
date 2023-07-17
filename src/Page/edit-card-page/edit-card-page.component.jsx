@@ -201,7 +201,7 @@ export const EditCardPage = () => {
               if (updateRes?.data?.success) {
                 setQRValue(
                   window?.location?.href?.replace(
-                    "create-card",
+                    "edit-card",
                     "v-card/" + res?.data?.data?.id
                   )
                 );
