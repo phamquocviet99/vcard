@@ -13,6 +13,19 @@ export const DashBoardPage = () => {
   const axiosPrivate = usePrivate();
   const [cardList, setCardList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [QRWidth, setQRWidth] = useState(150);
+
+  window.onresize = function (event) {
+    if (event?.target?.innerWidth < 1250) {
+      if (event?.target?.innerWidth < 950) {
+        setQRWidth(80);
+      } else {
+        setQRWidth(120);
+      }
+    } else {
+      setQRWidth(150);
+    }
+  };
   const navigate = useNavigate();
 
   const getData = async () => {
@@ -64,7 +77,7 @@ export const DashBoardPage = () => {
                 </div>
               )}
               {cardList?.map((e) => (
-                <RecentCard props={e} />
+                <RecentCard props={e} size={QRWidth} />
               ))}
             </div>
           )}
@@ -74,20 +87,22 @@ export const DashBoardPage = () => {
   );
 };
 
-const RecentCard = ({ props }) => {
+const RecentCard = ({ props, size }) => {
   const navigate = useNavigate();
+
   return (
     <div
       className="w-[14vw] min-w-[110px] mx-2 my-2 border-gray-300 border-2 rounded cursor-pointer px-1"
       onClick={() => navigate(PagePath.EditCard + "/" + props?.id)}
     >
-      <div className="w-full h-[15vw] min-h-[115px] bg-white flex justify-center items-center p-3">
+      <div className="w-full h-[15vw] min-h-[115px] bg-white flex justify-center items-center">
         <QRCode
           logoImage={mylogoImage}
           logoPaddingStyle={"circle"}
           logoPadding={1}
           qrStyle={"square"}
           value={props?.QRcode?.url || ""}
+          size={size}
         />
       </div>
       <p className="w-full text-sm font-semibold text-black pt-2 line-clamp-2 text-center">
