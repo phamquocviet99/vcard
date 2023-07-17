@@ -282,7 +282,7 @@ export const CreateCardPage = () => {
         </div>
       </Dialog>
       <div className="w-screen h-screen overflow-y-auto bg-gray-200 px-6">
-        <div className="flex xl:flex-row gap-3">
+        <div className="flex gap-3 flex-col xl:flex-row">
           <div className="my-3 px-4 py-4 rounded bg-white self-center w-[100%] xl:w-2/3 h-fit">
             <p className="text-lg font-semibold text-black">Thông tin VCard</p>
             <div className="flex-1">

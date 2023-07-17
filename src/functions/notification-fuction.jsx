@@ -17,3 +17,17 @@ export const ErrorPopUp = (content = "") => {
     confirmButtonText: "Xác nhận",
   });
 };
+
+export const ConfirmHandle = (title, onConfirm) => {
+  return Swal.fire({
+    text: title || "",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonText: "Xác nhận",
+    cancelButtonText: "Hủy bỏ",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      onConfirm && onConfirm();
+    }
+  });
+};
