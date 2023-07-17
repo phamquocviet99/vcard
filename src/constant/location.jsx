@@ -38463,19 +38463,19 @@ export const locations = [
             ward_code: "26884",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "26887",
           },
           {
-            ward: "Phường 07",
+            ward: "Phường 7",
             ward_code: "26890",
           },
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "26893",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "26896",
           },
           {
@@ -38491,7 +38491,7 @@ export const locations = [
             ward_code: "26899",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "26902",
           },
         ],
@@ -38525,11 +38525,11 @@ export const locations = [
             ward_code: "26920",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "26923",
           },
           {
-            ward: "Phường 07",
+            ward: "Phường 7",
             ward_code: "26926",
           },
           {
@@ -38537,7 +38537,7 @@ export const locations = [
             ward_code: "26929",
           },
           {
-            ward: "Phường 06",
+            ward: "Phường 6",
             ward_code: "26932",
           },
           {
@@ -38549,15 +38549,15 @@ export const locations = [
             ward_code: "26938",
           },
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "26941",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "26944",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "26947",
           },
           {
@@ -38587,11 +38587,11 @@ export const locations = [
         district_code: "766",
         wards: [
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "26965",
           },
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "26968",
           },
           {
@@ -38603,11 +38603,11 @@ export const locations = [
             ward_code: "26974",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "26977",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "26980",
           },
           {
@@ -38615,11 +38615,11 @@ export const locations = [
             ward_code: "26983",
           },
           {
-            ward: "Phường 07",
+            ward: "Phường 7",
             ward_code: "26986",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "26989",
           },
           {
@@ -38627,15 +38627,15 @@ export const locations = [
             ward_code: "26992",
           },
           {
-            ward: "Phường 06",
+            ward: "Phường 6",
             ward_code: "26995",
           },
           {
-            ward: "Phường 08",
+            ward: "Phường 8",
             ward_code: "26998",
           },
           {
-            ward: "Phường 09",
+            ward: "Phường 9",
             ward_code: "27001",
           },
           {
@@ -38703,35 +38703,35 @@ export const locations = [
         district_code: "768",
         wards: [
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "27043",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "27046",
           },
           {
-            ward: "Phường 09",
+            ward: "Phường 9",
             ward_code: "27049",
           },
           {
-            ward: "Phường 07",
+            ward: "Phường 7",
             ward_code: "27052",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "27055",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "27058",
           },
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "27061",
           },
           {
-            ward: "Phường 08",
+            ward: "Phường 8",
             ward_code: "27064",
           },
           {
@@ -38923,7 +38923,7 @@ export const locations = [
             ward_code: "27139",
           },
           {
-            ward: "Phường 09",
+            ward: "Phường 9",
             ward_code: "27142",
           },
           {
@@ -38931,23 +38931,23 @@ export const locations = [
             ward_code: "27145",
           },
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "27148",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "27151",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "27154",
           },
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "27157",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "27160",
           },
         ],
@@ -38981,35 +38981,35 @@ export const locations = [
             ward_code: "27178",
           },
           {
-            ward: "Phường 09",
+            ward: "Phường 9",
             ward_code: "27181",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "27184",
           },
           {
-            ward: "Phường 08",
+            ward: "Phường 8",
             ward_code: "27187",
           },
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "27190",
           },
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "27193",
           },
           {
-            ward: "Phường 07",
+            ward: "Phường 7",
             ward_code: "27196",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "27199",
           },
           {
-            ward: "Phường 06",
+            ward: "Phường 6",
             ward_code: "27202",
           },
         ],
@@ -39023,7 +39023,7 @@ export const locations = [
             ward_code: "27208",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "27211",
           },
           {
@@ -39035,7 +39035,7 @@ export const locations = [
             ward_code: "27217",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "27220",
           },
           {
@@ -39047,11 +39047,11 @@ export const locations = [
             ward_code: "27226",
           },
           {
-            ward: "Phường 08",
+            ward: "Phường 8",
             ward_code: "27229",
           },
           {
-            ward: "Phường 09",
+            ward: "Phường 9",
             ward_code: "27232",
           },
           {
@@ -39059,23 +39059,23 @@ export const locations = [
             ward_code: "27235",
           },
           {
-            ward: "Phường 07",
+            ward: "Phường 7",
             ward_code: "27238",
           },
           {
-            ward: "Phường 06",
+            ward: "Phường 6",
             ward_code: "27241",
           },
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "27244",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "27247",
           },
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "27250",
           },
           {
@@ -39093,15 +39093,15 @@ export const locations = [
             ward_code: "27259",
           },
           {
-            ward: "Phường 09",
+            ward: "Phường 9",
             ward_code: "27262",
           },
           {
-            ward: "Phường 06",
+            ward: "Phường 6",
             ward_code: "27265",
           },
           {
-            ward: "Phường 08",
+            ward: "Phường 8",
             ward_code: "27268",
           },
           {
@@ -39117,11 +39117,11 @@ export const locations = [
             ward_code: "27280",
           },
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "27283",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "27286",
           },
           {
@@ -39129,7 +39129,7 @@ export const locations = [
             ward_code: "27289",
           },
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "27292",
           },
           {
@@ -39137,7 +39137,7 @@ export const locations = [
             ward_code: "27295",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "27298",
           },
         ],
@@ -39147,15 +39147,15 @@ export const locations = [
         district_code: "774",
         wards: [
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "27301",
           },
           {
-            ward: "Phường 09",
+            ward: "Phường 9",
             ward_code: "27304",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "27307",
           },
           {
@@ -39163,19 +39163,19 @@ export const locations = [
             ward_code: "27310",
           },
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "27313",
           },
           {
-            ward: "Phường 08",
+            ward: "Phường 8",
             ward_code: "27316",
           },
           {
-            ward: "Phường 07",
+            ward: "Phường 7",
             ward_code: "27322",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "27325",
           },
           {
@@ -39187,11 +39187,11 @@ export const locations = [
             ward_code: "27331",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "27334",
           },
           {
-            ward: "Phường 06",
+            ward: "Phường 6",
             ward_code: "27337",
           },
           {
@@ -39217,11 +39217,11 @@ export const locations = [
             ward_code: "27349",
           },
           {
-            ward: "Phường 09",
+            ward: "Phường 9",
             ward_code: "27352",
           },
           {
-            ward: "Phường 06",
+            ward: "Phường 6",
             ward_code: "27355",
           },
           {
@@ -39229,7 +39229,7 @@ export const locations = [
             ward_code: "27358",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "27361",
           },
           {
@@ -39237,27 +39237,27 @@ export const locations = [
             ward_code: "27364",
           },
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "27367",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "27370",
           },
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "27373",
           },
           {
-            ward: "Phường 08",
+            ward: "Phường 8",
             ward_code: "27376",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "27379",
           },
           {
-            ward: "Phường 07",
+            ward: "Phường 7",
             ward_code: "27382",
           },
           {
@@ -39271,19 +39271,19 @@ export const locations = [
         district_code: "776",
         wards: [
           {
-            ward: "Phường 08",
+            ward: "Phường 8",
             ward_code: "27388",
           },
           {
-            ward: "Phường 02",
+            ward: "Phường 2",
             ward_code: "27391",
           },
           {
-            ward: "Phường 01",
+            ward: "Phường 1",
             ward_code: "27394",
           },
           {
-            ward: "Phường 03",
+            ward: "Phường 3",
             ward_code: "27397",
           },
           {
@@ -39291,7 +39291,7 @@ export const locations = [
             ward_code: "27400",
           },
           {
-            ward: "Phường 09",
+            ward: "Phường 9",
             ward_code: "27403",
           },
           {
@@ -39299,7 +39299,7 @@ export const locations = [
             ward_code: "27406",
           },
           {
-            ward: "Phường 04",
+            ward: "Phường 4",
             ward_code: "27409",
           },
           {
@@ -39311,7 +39311,7 @@ export const locations = [
             ward_code: "27415",
           },
           {
-            ward: "Phường 05",
+            ward: "Phường 5",
             ward_code: "27418",
           },
           {
@@ -39319,7 +39319,7 @@ export const locations = [
             ward_code: "27421",
           },
           {
-            ward: "Phường 06",
+            ward: "Phường 6",
             ward_code: "27424",
           },
           {
@@ -39331,7 +39331,7 @@ export const locations = [
             ward_code: "27430",
           },
           {
-            ward: "Phường 07",
+            ward: "Phường 7",
             ward_code: "27433",
           },
         ],
