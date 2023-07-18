@@ -54,21 +54,21 @@ export default function Vcard() {
                 />
               </div>
               <p className="text-white font-bold text-center text-3xl mt-5">
-                {data?.userName}
+                {data?.nameUser}
               </p>
               <p className="text-white font-medium text-center text-xl mt-5">
                 {data?.position}
               </p>
               <p className="text-sm font-medium text-gray-white text-white text-center mt-2">
-                {data?.companyName}
+                {data?.nameCompany}
               </p>
 
               <div className="flex py-3 justify-center my-5">
                 <button
                   onClick={() => {
                     SaveCard(
-                      data?.userName,
-                      data?.companyName,
+                      data?.nameUser,
+                      data?.nameCompany,
                       data?.position,
                       data?.email,
                       data?.phone,
