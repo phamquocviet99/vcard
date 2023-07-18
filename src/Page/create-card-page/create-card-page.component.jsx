@@ -237,7 +237,7 @@ export const CreateCardPage = () => {
         image={previewAvatar}
       />
       <Dialog onClose={() => {}} open={successDialog}>
-        <div className="px-5 py-2 bg-white flex-col justify-center items-center">
+        <div className="px-5 py-2 bg-white flex flex-col justify-center items-center">
           <p className="py-2 text-lg text-blue-600 font-semibold text-center">
             Bạn đã tạo thành công VCard
           </p>
@@ -267,7 +267,7 @@ export const CreateCardPage = () => {
           >
             Tải mã QR
           </button>
-
+          <br />
           <button
             className="px-5 py-2 bg-blue-600 text-white mt-5"
             onClick={() => {
@@ -392,11 +392,12 @@ export const CreateCardPage = () => {
                 <div className="flex-1">
                   <TextInput
                     label={"URL"}
-                    require={true}
+                    value={zaloUrl}
                     onChange={(e) => setZaloUrl(e)}
                   />
                   <br />
                   <TextInput
+                    value={zaloName}
                     label={"Tên hiển thị"}
                     onChange={(e) => setZaloName(e)}
                   />
@@ -411,12 +412,13 @@ export const CreateCardPage = () => {
 
                 <div className="flex-1">
                   <TextInput
+                    value={fbUrl}
                     label={"URL"}
-                    require={true}
                     onChange={(e) => setFbUrl(e)}
                   />
                   <br />
                   <TextInput
+                    value={fbName}
                     label={"Tên hiển thị"}
                     onChange={(e) => setFbName(e)}
                   />
@@ -437,7 +439,7 @@ export const CreateCardPage = () => {
               value={city}
               inputValue={city}
               renderInput={(params) => (
-                <TextField {...params} label="Thành phố" />
+                <TextField {...params} label="Thành phố/Tỉnh" />
               )}
               className="my-3"
             />
@@ -456,7 +458,7 @@ export const CreateCardPage = () => {
                 setWard("");
               }}
               renderInput={(params) => (
-                <TextField {...params} label="Quận/Tỉnh" />
+                <TextField {...params} label="Quận/Huyện" />
               )}
               className="my-3"
             />

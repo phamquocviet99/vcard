@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import AvatarEditor from "react-avatar-editor";
+import { useState } from "react";
 import Swal from "sweetalert2";
 import ModalUpdateAvatar from "./add-image-modal/add-image-modal.component";
 import { FaImages } from "react-icons/fa";
@@ -13,7 +12,6 @@ import { SiMaildotru, SiZalo } from "react-icons/si";
 import { AiFillFacebook, AiFillPhone, AiOutlineUserAdd } from "react-icons/ai";
 import { ImPhone } from "react-icons/im";
 import { TextInput } from "../../component/TextInput/TextInput.component";
-import Vcard from "../Vcard";
 import { BsFacebook } from "react-icons/bs";
 import { HiLocationMarker, HiOutlineMail } from "react-icons/hi";
 import bgImage from "../../image/e3a20aaf-660d-4e10-892b-7ac2a5c9dff0.webp";
@@ -25,12 +23,7 @@ import { validateEmptyString } from "../../functions/format-function";
 import { QRCode } from "react-qrcode-logo";
 import UploadFile from "../../functions/load-image-function";
 import { usePrivate } from "../../service/service";
-import {
-  Navigate,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { PagePath } from "../../constant/page";
 import { useEffect } from "react";
 
@@ -321,7 +314,7 @@ export const EditCardPage = () => {
         image={previewAvatar}
       />
       <Dialog onClose={() => {}} open={successDialog}>
-        <div className="px-5 py-2 bg-white flex-col justify-center items-center">
+        <div className="px-5 py-2 bg-white flex flex-col justify-center items-center">
           <p className="py-2 text-lg text-blue-600 font-semibold text-center">
             Bạn đã tạo thành công VCard
           </p>
@@ -351,7 +344,7 @@ export const EditCardPage = () => {
           >
             Tải mã QR
           </button>
-
+          <br />
           <button
             className="px-5 py-2 bg-blue-600 text-white mt-5"
             onClick={() => {
@@ -485,7 +478,6 @@ export const EditCardPage = () => {
                   <TextInput
                     value={zaloUrl}
                     label={"URL"}
-                    require={true}
                     onChange={(e) => setZaloUrl(e)}
                   />
                   <br />
@@ -507,7 +499,6 @@ export const EditCardPage = () => {
                   <TextInput
                     value={fbUrl}
                     label={"URL"}
-                    require={true}
                     onChange={(e) => setFbUrl(e)}
                   />
                   <br />
@@ -533,7 +524,7 @@ export const EditCardPage = () => {
               value={city}
               inputValue={city}
               renderInput={(params) => (
-                <TextField {...params} label="Thành phố" />
+                <TextField {...params} label="Thành phố/Tỉnh" />
               )}
               className="my-3"
             />
@@ -552,7 +543,7 @@ export const EditCardPage = () => {
                 setWard("");
               }}
               renderInput={(params) => (
-                <TextField {...params} label="Quận/Tỉnh" />
+                <TextField {...params} label="Quận/Huyện" />
               )}
               className="my-3"
             />
