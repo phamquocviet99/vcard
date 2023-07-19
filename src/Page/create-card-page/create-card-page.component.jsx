@@ -21,9 +21,12 @@ import logoImage from "../../image/logo.png";
 import "./create-card.style.css";
 import { locations } from "../../constant/location";
 import { ErrorPopUp, NotifyPopUp } from "../../functions/notification-fuction";
-import { validateEmptyString } from "../../functions/format-function";
+import {
+  convertBase64ToFile,
+  validateEmptyString,
+} from "../../functions/format-function";
 import { QRCode } from "react-qrcode-logo";
-import UploadFile from "../../functions/load-image-function";
+import UploadFile, { resizeFile } from "../../functions/load-image-function";
 import { usePrivate } from "../../service/service";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PagePath } from "../../constant/page";
@@ -68,6 +71,7 @@ export const CreateCardPage = () => {
   const [successDialog, setSuccessDialog] = useState(false);
   const axiosPrivate = usePrivate();
   const naviagte = useNavigate();
+  const editorRef = useRef(null);
 
   const handleSelectAvatar = (e) => {
     if (e.target.files.length > 0) {
@@ -140,7 +144,7 @@ export const CreateCardPage = () => {
     return true;
   };
 
-  const submitData = (avatarUrl) => {
+  const submitData = async () => {
     let data = {
       nameUser: name,
       nameCard: nameCard,
@@ -149,9 +153,7 @@ export const CreateCardPage = () => {
       position: position,
       phone: phone,
       location: address + ", " + ward + ", " + district + ", " + city,
-      logo: {
-        avatar: avatarUrl,
-      },
+      logo: previewAvatar,
     };
 
     if (!validateEmptyString(zaloUrl)) {
@@ -174,7 +176,12 @@ export const CreateCardPage = () => {
       };
     }
 
-    submitCard(data);
+    const formData = new FormData();
+    Object.keys(data).forEach((key) => {
+      formData.append(key, data[key]);
+    });
+
+    submitCard(formData);
   };
 
   const submitCard = async (data) => {
@@ -214,18 +221,6 @@ export const CreateCardPage = () => {
       ErrorPopUp(err);
       setLoading(false);
     }
-  };
-
-  const createCard = async () => {
-    setLoading(true);
-    await UploadFile.uploadSingleFile(previewAvatar, "VCard/images").then(
-      (res) => {
-        if (res?.url) {
-          submitData(res?.url);
-        }
-      }
-    );
-    setLoading(false);
   };
 
   return (
@@ -437,7 +432,8 @@ export const CreateCardPage = () => {
                 setWard("");
               }}
               value={city}
-              inputValue={city}
+              clearIcon={false}
+              inputMode="none"
               renderInput={(params) => (
                 <TextField {...params} label="Thành phố/Tỉnh" />
               )}
@@ -447,7 +443,8 @@ export const CreateCardPage = () => {
             <Autocomplete
               id="free-solo-demo"
               value={district}
-              inputValue={district}
+              clearIcon={false}
+              inputMode="none"
               options={
                 locations
                   ?.find((e) => e?.province === city)
@@ -466,7 +463,8 @@ export const CreateCardPage = () => {
             <Autocomplete
               id="free-solo-demo"
               value={ward}
-              inputValue={ward}
+              clearIcon={false}
+              inputMode="none"
               options={
                 locations
                   ?.find((e) => e?.province === city)
@@ -477,7 +475,7 @@ export const CreateCardPage = () => {
                 setWard(e);
               }}
               renderInput={(params) => (
-                <TextField {...params} label="Xã/Phường" />
+                <TextField {...params} label="Xã/Phường *" />
               )}
               className="my-3"
             />
@@ -520,7 +518,7 @@ export const CreateCardPage = () => {
                 className="w-40 h-10 bg-blue-600 rounded text-white"
                 onClick={() => {
                   if (checkValid()) {
-                    createCard();
+                    submitData();
                   }
                 }}
               >

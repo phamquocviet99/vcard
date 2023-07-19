@@ -141,7 +141,7 @@ export const EditCardPage = () => {
     return true;
   };
 
-  const submitData = (avatarUrl) => {
+  const submitData = () => {
     let data = {
       nameUser: name,
       nameCard: nameCard,
@@ -150,9 +150,6 @@ export const EditCardPage = () => {
       position: position,
       phone: phone,
       location: address + ", " + ward + ", " + district + ", " + city,
-      logo: {
-        avatar: avatarUrl,
-      },
     };
 
     if (!validateEmptyString(zaloUrl)) {
@@ -175,7 +172,19 @@ export const EditCardPage = () => {
       };
     }
 
-    submitCard(data);
+    if (previewAvatar !== "") {
+      data = {
+        ...data,
+        logo: previewAvatar,
+      };
+    }
+
+    const formData = new FormData();
+    Object.keys(data).forEach((key) => {
+      formData.append(key, data[key]);
+    });
+
+    submitCard(formData);
   };
 
   const submitCard = async (data) => {
@@ -211,22 +220,6 @@ export const EditCardPage = () => {
     }
   };
 
-  const createCard = async () => {
-    if (previewAvatar !== "") {
-      setLoading(true);
-      await UploadFile.uploadSingleFile(previewAvatar, "VCard/images").then(
-        (res) => {
-          if (res?.url) {
-            submitData(res?.url);
-          }
-        }
-      );
-      setLoading(false);
-    } else {
-      submitData(demoData?.avatar);
-    }
-  };
-
   const getData = async () => {
     setFirstLoading(true);
     try {
@@ -253,7 +246,7 @@ export const EditCardPage = () => {
             setCity(locationList[3]);
             setDemoData({
               ...data,
-              avatar: data?.logo?.avatar,
+              avatar: data?.logo,
               address: locationList[0],
               ward: locationList[1],
               district: locationList[2],
@@ -609,7 +602,7 @@ export const EditCardPage = () => {
                 className="w-40 h-10 bg-blue-600 rounded text-white text-center"
                 onClick={() => {
                   if (checkValid()) {
-                    createCard();
+                    submitData();
                   }
                 }}
               >

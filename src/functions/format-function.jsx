@@ -1,5 +1,5 @@
 export const convertBase64ToFile = (base64String) => {
-  const parts = base64String.split(";base64,");
+  const parts = base64String?.split(";base64,");
   const contentType = parts[0].split(":")[1];
   const raw = window.atob(parts[1]);
   const rawLength = raw.length;
@@ -11,5 +11,9 @@ export const convertBase64ToFile = (base64String) => {
 };
 
 export const validateEmptyString = (val) => {
-  return val?.trim() === "";
+  try {
+    return val.trim() === "";
+  } catch {
+    return true;
+  }
 };

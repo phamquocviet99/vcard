@@ -18,6 +18,7 @@ export default function ModalUpdateAvatar({
   const [disabled, setDisabled] = useState(false);
   const [scale, setScale] = useState(1);
   const editorRef = useRef(null);
+
   useEffect(() => {
     if (visible) {
       setLoading(false);

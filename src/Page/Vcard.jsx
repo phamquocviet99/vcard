@@ -50,7 +50,7 @@ export default function Vcard() {
                 <img
                   className=" border-white border-8 h-28 w-28 rounded-full object-cover"
                   alt=""
-                  src={data?.logo?.avatar}
+                  src={data?.logo}
                 />
               </div>
               <p className="text-white font-bold text-center text-3xl mt-5">
