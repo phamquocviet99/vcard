@@ -30,6 +30,7 @@ import UploadFile, { resizeFile } from "../../functions/load-image-function";
 import { usePrivate } from "../../service/service";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PagePath } from "../../constant/page";
+import { EmailRegex, PhoneRegex } from "../../constant/regex";
 
 const defaultValue = {
   avatar: bgImage,
@@ -128,8 +129,16 @@ export const CreateCardPage = () => {
       NotifyPopUp("Vui lòng nhập số điện thoại của bạn!");
       return false;
     }
+    if (!PhoneRegex?.test(phone)) {
+      NotifyPopUp("Số điện thoại không hợp lệ!");
+      return false;
+    }
     if (validateEmptyString(email)) {
       NotifyPopUp("Vui lòng nhập email của bạn!");
+      return false;
+    }
+    if (!EmailRegex?.test(email)) {
+      NotifyPopUp("Email không hợp lệ!");
       return false;
     }
     if (
