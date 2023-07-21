@@ -110,7 +110,7 @@ export default function Vcard() {
                 </div>
                 <div className="flex flex-col justify-start w-full">
                   <a
-                    href="tel:0983277941"
+                    href={"tel:" + data?.phone}
                     className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
                   >
                     {data?.phone}
@@ -136,7 +136,7 @@ export default function Vcard() {
                         rel="noopener noreferrer"
                         className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
                       >
-                        {data?.zalo?.name || data?.userName}
+                        {data?.zalo?.name || data?.nameUser}
                       </a>
                       <p className="text-sm text-gray-400 mt-2">Zalo</p>
                     </div>
@@ -161,7 +161,7 @@ export default function Vcard() {
                         rel="noopener noreferrer"
                         className="text-sm font-medium text-[#122C6C] cursor-pointer hover:underline"
                       >
-                        {data?.facebook?.name || data?.userName}
+                        {data?.facebook?.name || data?.nameUser}
                       </a>
                       <p className="text-sm text-gray-400 mt-2">Facebook</p>
                     </div>

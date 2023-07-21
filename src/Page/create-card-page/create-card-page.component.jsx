@@ -444,7 +444,7 @@ export const CreateCardPage = () => {
               clearIcon={false}
               inputMode="none"
               renderInput={(params) => (
-                <TextField {...params} label="Thành phố/Tỉnh" />
+                <TextField {...params} label="Thành phố/Tỉnh *" />
               )}
               className="my-3"
             />
@@ -464,7 +464,7 @@ export const CreateCardPage = () => {
                 setWard("");
               }}
               renderInput={(params) => (
-                <TextField {...params} label="Quận/Huyện" />
+                <TextField {...params} label="Quận/Huyện *" />
               )}
               className="my-3"
             />
