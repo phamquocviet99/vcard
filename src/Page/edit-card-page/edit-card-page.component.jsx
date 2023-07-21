@@ -155,20 +155,20 @@ export const EditCardPage = () => {
     if (!validateEmptyString(zaloUrl)) {
       data = {
         ...data,
-        zalo: {
+        zalo: JSON.stringify({
           name: zaloName,
           url: zaloUrl,
-        },
+        }),
       };
     }
 
     if (!validateEmptyString(fbUrl)) {
       data = {
         ...data,
-        facebook: {
+        facebook: JSON.stringify({
           name: fbName,
           url: fbUrl,
-        },
+        }),
       };
     }
 
@@ -188,7 +188,9 @@ export const EditCardPage = () => {
   };
 
   const submitCard = async (data) => {
+    console.log(data);
     setLoading(true);
+
     try {
       await axiosPrivate.put("v-card/" + id, data).then((res) => {
         if (res?.data?.success) {
@@ -234,6 +236,9 @@ export const EditCardPage = () => {
           setPhone(data?.phone);
 
           const locationList = data?.location?.split(", ");
+          const zalo = data?.zalo ? JSON.parse(data?.zalo) : "";
+          const facebook = data?.facebook ? JSON.parse(data?.facebook) : "";
+
           if (
             locationList[0] &&
             locationList[1] &&
@@ -253,24 +258,24 @@ export const EditCardPage = () => {
               city: locationList[3],
               name: data?.nameUser,
               company: data?.nameCompany,
-              zaloUrl: data?.zalo?.url,
-              fbUrl: data?.facebook?.url,
-              zaloName: data?.zalo?.name,
-              fbName: data?.facebook?.name,
+              zaloUrl: zalo?.url,
+              fbUrl: facebook?.url,
+              zaloName: zalo?.name,
+              fbName: facebook?.name,
             });
           }
 
-          if (data.zalo?.url) {
-            setZaloUrl(data.zalo?.url);
+          if (zalo?.url) {
+            setZaloUrl(zalo?.url);
           }
-          if (data.zalo?.name) {
-            setZaloName(data.zalo?.name);
+          if (zalo?.name) {
+            setZaloName(zalo?.name);
           }
-          if (data.facebook?.url) {
-            setFbUrl(data.facebook?.url);
+          if (facebook?.url) {
+            setFbUrl(facebook?.url);
           }
-          if (data.facebook?.name) {
-            setFbName(data.facebook?.name);
+          if (facebook?.name) {
+            setFbName(facebook?.name);
           }
         } else {
           ErrorPopUp(res?.data?.message);
@@ -515,9 +520,10 @@ export const EditCardPage = () => {
                 setWard("");
               }}
               value={city}
-              inputValue={city}
+              clearIcon={false}
+              inputMode="none"
               renderInput={(params) => (
-                <TextField {...params} label="Thành phố/Tỉnh" />
+                <TextField {...params} label="Thành phố/Tỉnh *" />
               )}
               className="my-3"
             />
@@ -525,7 +531,8 @@ export const EditCardPage = () => {
             <Autocomplete
               id="free-solo-demo"
               value={district}
-              inputValue={district}
+              clearIcon={false}
+              inputMode="none"
               options={
                 locations
                   ?.find((e) => e?.province === city)
@@ -536,7 +543,7 @@ export const EditCardPage = () => {
                 setWard("");
               }}
               renderInput={(params) => (
-                <TextField {...params} label="Quận/Huyện" />
+                <TextField {...params} label="Quận/Huyện *" />
               )}
               className="my-3"
             />
@@ -544,7 +551,8 @@ export const EditCardPage = () => {
             <Autocomplete
               id="free-solo-demo"
               value={ward}
-              inputValue={ward}
+              clearIcon={false}
+              inputMode="none"
               options={
                 locations
                   ?.find((e) => e?.province === city)
@@ -555,7 +563,7 @@ export const EditCardPage = () => {
                 setWard(e);
               }}
               renderInput={(params) => (
-                <TextField {...params} label="Xã/Phường" />
+                <TextField {...params} label="Xã/Phường *" />
               )}
               className="my-3"
             />

@@ -24,7 +24,24 @@ export default function Vcard() {
     try {
       await axiosClient.get("/v-card/" + id).then((res) => {
         if (res?.data?.success) {
-          setData(res?.data?.data);
+          const zalo = res?.data?.data?.zalo
+            ? JSON.parse(res?.data?.data?.zalo)
+            : "";
+          const facebook = res?.data?.data?.facebook
+            ? JSON.parse(res?.data?.data?.facebook)
+            : "";
+
+          setData({
+            ...res?.data?.data,
+            zalo: {
+              url: zalo?.url,
+              name: zalo?.name,
+            },
+            facebook: {
+              url: facebook?.url,
+              name: facebook?.name,
+            },
+          });
         } else {
           ErrorPopUp(res?.data?.message);
         }
@@ -35,6 +52,8 @@ export default function Vcard() {
       setLoading(false);
     }
   };
+
+  console.log(data);
 
   useEffect(() => {
     getData();

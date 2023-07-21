@@ -159,20 +159,20 @@ export const CreateCardPage = () => {
     if (!validateEmptyString(zaloUrl)) {
       data = {
         ...data,
-        zalo: {
+        zalo: JSON.stringify({
           name: zaloName,
           url: zaloUrl,
-        },
+        }),
       };
     }
 
     if (!validateEmptyString(fbUrl)) {
       data = {
         ...data,
-        facebook: {
+        facebook: JSON.stringify({
           name: fbName,
           url: fbUrl,
-        },
+        }),
       };
     }
 
