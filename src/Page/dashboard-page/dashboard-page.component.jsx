@@ -90,7 +90,7 @@ export const DashBoardPage = () => {
               onClick={() => {
                 ConfirmHandle("Bạn muốn đăng xuất?", () => {
                   localStorage.removeItem("token");
-                  navigate(PagePath.Login, {
+                  navigate(PagePath.Authenticate, {
                     replace: true,
                   });
                 });

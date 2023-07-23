@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { PagePath } from "./constant/page";
+import { AuthenticatePage } from "./Page/authenticate-page/authenticate.component";
 import { CreateCardPage } from "./Page/create-card-page/create-card-page.component";
 import { DashBoardPage } from "./Page/dashboard-page/dashboard-page.component";
 import { EditCardPage } from "./Page/edit-card-page/edit-card-page.component";
-import { LoginPage } from "./Page/login-page/login-page.component";
 import Vcard from "./Page/Vcard";
 import { Authenticate } from "./service/authenticate";
 
@@ -15,7 +15,7 @@ function App() {
         <Route index element={<Vcard />} />
       </Route>
 
-      <Route path={PagePath.Login} element={<LoginPage />} />
+      <Route path={PagePath.Authenticate} element={<AuthenticatePage />} />
 
       <Route element={<Authenticate />}>
         <Route path={PagePath.Dashboard} element={<DashBoardPage />} />

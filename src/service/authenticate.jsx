@@ -11,10 +11,10 @@ export const Authenticate = () => {
     var isExpired = dayjs.unix(dataUser?.exp).diff(dayjs()) < 1;
 
     if (isExpired) {
-      return <Navigate to={PagePath.Login} replace />;
+      return <Navigate to={PagePath.Authenticate} replace />;
     }
   } else {
-    return <Navigate to={PagePath.Login} replace />;
+    return <Navigate to={PagePath.Authenticate} replace />;
   }
 
   return <Outlet />;

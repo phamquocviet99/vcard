@@ -28,7 +28,7 @@ export const usePrivate = () => {
       if (!isExpired) {
         return req;
       } else {
-        navigate(PagePath.Login);
+        navigate(PagePath.Authenticate);
       }
     },
     (error) => {
@@ -42,7 +42,7 @@ export const usePrivate = () => {
     async (error) => {
       const prevRequest = error?.config;
       if (error?.response?.status === 403) {
-        navigate(PagePath.Login);
+        navigate(PagePath.Authenticate);
       }
       if (error?.response?.status === 500) {
         // navigate("/network-error");
@@ -57,7 +57,7 @@ export const usePrivate = () => {
       if (error?.response?.status === 401 && !prevRequest?.sent) {
         // console.log("Bị lỗi 401");
 
-        navigate(PagePath.Login);
+        navigate(PagePath.Authenticate);
       }
       return Promise.reject(error);
     }
