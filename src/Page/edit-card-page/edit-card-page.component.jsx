@@ -623,7 +623,12 @@ export const EditCardPage = () => {
                 }}
               >
                 {loading ? (
-                  <CircularProgress className="text-sm p-2 text-white" />
+                  <CircularProgress
+                    style={{
+                      color: "white",
+                    }}
+                    className="text-sm p-2 text-white"
+                  />
                 ) : (
                   " Sửa thông tin VCard"
                 )}

@@ -536,7 +536,10 @@ export const CreateCardPage = () => {
                 }}
               >
                 {loading ? (
-                  <CircularProgress className="text-sm p-2 text-white" />
+                  <CircularProgress
+                    style={{ color: "white" }}
+                    className="text-sm p-2 text-white"
+                  />
                 ) : (
                   " Lưu VCard"
                 )}
