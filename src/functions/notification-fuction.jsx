@@ -18,6 +18,15 @@ export const ErrorPopUp = (content = "") => {
   });
 };
 
+export const SuccessPopUp = (content = "") => {
+  return Swal.fire({
+    title: "Thành công",
+    text: content,
+    icon: "success",
+    confirmButtonText: "Xác nhận",
+  });
+};
+
 export const ConfirmHandle = (title, onConfirm) => {
   return Swal.fire({
     text: title || "",
