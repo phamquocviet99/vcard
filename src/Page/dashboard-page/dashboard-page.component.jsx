@@ -116,7 +116,7 @@ export const DashBoardPage = () => {
           ) : (
             <div className="w-full flex flex-wrap">
               {cardList?.length === 0 && (
-                <div className="w-full flex-col justify-center items-center">
+                <div className="w-full flex flex-col justify-center items-center">
                   <FcRemoveImage className="text-[3vw]" />
                   <p>Hiện tại bạn chưa có VCard nào</p>
                 </div>
