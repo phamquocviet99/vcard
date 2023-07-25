@@ -109,6 +109,10 @@ export const CreateCardPage = () => {
   };
 
   const checkValid = () => {
+    if (!previewAvatar) {
+      NotifyPopUp("Vui lòng chọn hình đại diện!");
+      return false;
+    }
     if (validateEmptyString(nameCard)) {
       NotifyPopUp("Vui lòng nhập tên của Vcard!");
       return false;

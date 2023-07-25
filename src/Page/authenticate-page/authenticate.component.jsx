@@ -42,20 +42,16 @@ export const AuthenticatePage = () => {
 
   const registerVendor = async (e) => {
     setLoading(true);
-    try {
-      const res = await axiosClient.post("/auth/register", e);
-      if (res?.data?.success) {
-        SuccessPopUp(
-          "Đăng ký thành công! Bạn có thể đăng nhập bằng tài khoản vừa tạo"
-        );
-      } else {
-        ErrorPopUp(res?.data?.message);
-      }
-      setLoading(false);
-    } catch (err) {
-      ErrorPopUp(err);
-      setLoading(false);
+
+    const res = await axiosClient.post("/auth/register", e);
+    if (res?.data?.success) {
+      SuccessPopUp(
+        "Đăng ký thành công! Bạn có thể đăng nhập bằng tài khoản vừa tạo"
+      );
+    } else {
+      ErrorPopUp(res?.data?.message);
     }
+    setLoading(false);
   };
 
   const login = async () => {
