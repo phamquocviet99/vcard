@@ -50,7 +50,7 @@ export const DashBoardPage = () => {
         setLoading(false);
       });
     } catch (err) {
-      ErrorPopUp(err);
+      ErrorPopUp(err?.response?.data?.message);
       setLoading(false);
     }
   };
@@ -68,7 +68,7 @@ export const DashBoardPage = () => {
         setLoading(false);
       });
     } catch (err) {
-      ErrorPopUp(err);
+      ErrorPopUp(err?.response?.data?.message);
       setLoading(false);
     }
   };

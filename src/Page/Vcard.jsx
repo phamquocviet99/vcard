@@ -48,7 +48,7 @@ export default function Vcard() {
         setLoading(false);
       });
     } catch (err) {
-      ErrorPopUp(err);
+      ErrorPopUp(err?.response?.data?.message);
       setLoading(false);
     }
   };

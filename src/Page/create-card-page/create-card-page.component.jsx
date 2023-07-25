@@ -231,7 +231,7 @@ export const CreateCardPage = () => {
         setLoading(false);
       });
     } catch (err) {
-      ErrorPopUp(err);
+      ErrorPopUp(err?.response?.data?.message);
       setLoading(false);
     }
   };
@@ -403,7 +403,7 @@ export const CreateCardPage = () => {
                     value={zaloUrl}
                     onChange={(e) => setZaloUrl(e)}
                   />
-                  <br />
+
                   <TextInput
                     value={zaloName}
                     label={"Tên hiển thị"}
@@ -424,7 +424,7 @@ export const CreateCardPage = () => {
                     label={"URL"}
                     onChange={(e) => setFbUrl(e)}
                   />
-                  <br />
+
                   <TextInput
                     value={fbName}
                     label={"Tên hiển thị"}

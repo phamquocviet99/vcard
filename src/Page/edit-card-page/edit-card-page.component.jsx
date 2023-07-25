@@ -197,7 +197,6 @@ export const EditCardPage = () => {
   };
 
   const submitCard = async (data) => {
-    console.log(data);
     setLoading(true);
 
     try {
@@ -226,7 +225,7 @@ export const EditCardPage = () => {
         setLoading(false);
       });
     } catch (err) {
-      ErrorPopUp(err);
+      ErrorPopUp(err?.response?.data?.message);
       setLoading(false);
     }
   };
@@ -296,7 +295,7 @@ export const EditCardPage = () => {
         setFirstLoading(false);
       });
     } catch (err) {
-      ErrorPopUp(err);
+      ErrorPopUp(err?.response?.data?.message);
       navigate(PagePath.Dashboard, {
         replace: true,
       });
@@ -487,7 +486,7 @@ export const EditCardPage = () => {
                     label={"URL"}
                     onChange={(e) => setZaloUrl(e)}
                   />
-                  <br />
+
                   <TextInput
                     value={zaloName}
                     label={"Tên hiển thị"}
@@ -508,7 +507,7 @@ export const EditCardPage = () => {
                     label={"URL"}
                     onChange={(e) => setFbUrl(e)}
                   />
-                  <br />
+
                   <TextInput
                     value={fbName}
                     label={"Tên hiển thị"}

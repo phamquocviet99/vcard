@@ -17,8 +17,8 @@ import { Field, Form, Formik } from "formik";
 
 export const AuthenticatePage = () => {
   const navigate = useNavigate();
-  const [mail, setMail] = useState();
-  const [password, setPassword] = useState();
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const signUpValues = {
@@ -42,16 +42,28 @@ export const AuthenticatePage = () => {
 
   const registerVendor = async (e) => {
     setLoading(true);
+    try {
+      await axiosClient
+        .post("/auth/register", {
+          email: "khoatran@gmail.com",
+          password: "12345678",
+        })
+        .then((res) => {
+          if (res?.data?.success) {
+            SuccessPopUp(
+              "Đăng ký thành công! Bạn có thể đăng nhập bằng tài khoản vừa tạo"
+            );
+          } else {
+            ErrorPopUp(res?.data?.message);
+            setLoading(false);
+          }
+        });
 
-    const res = await axiosClient.post("/auth/register", e);
-    if (res?.data?.success) {
-      SuccessPopUp(
-        "Đăng ký thành công! Bạn có thể đăng nhập bằng tài khoản vừa tạo"
-      );
-    } else {
-      ErrorPopUp(res?.data?.message);
+      setLoading(false);
+    } catch (err) {
+      ErrorPopUp(err?.response?.data?.message);
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const login = async () => {
@@ -73,7 +85,7 @@ export const AuthenticatePage = () => {
           setLoading(false);
         });
     } catch (err) {
-      ErrorPopUp(err);
+      ErrorPopUp(err?.response?.data?.message);
       setLoading(false);
     }
   };
